@@ -138,7 +138,7 @@ def patch_match_parallel(a, b, iters=5, patch_size=7, alpha=0.5, w=None, num_cor
     for w in workers:
         w.join()
     # Retrieve shared memory
-    return np.frombuffer(nnf_shared, dtype=np.int).reshape(h_a, w_a, 2)
+    return np.array(nnf_shared, dtype=np.int).reshape(h_a, w_a, 2)
 
 
 def _patch_match_tile(a, b, y_start, y_end, nnf, distances, syncs, worker_id, iters=5, patch_size=7, alpha=0.5, w=None):
@@ -163,8 +163,8 @@ def _patch_match_tile(a, b, y_start, y_end, nnf, distances, syncs, worker_id, it
             change_y = -1
 
         # Create local copy of shared memory
-        nnf_copy = np.frombuffer(nnf, dtype=np.int).reshape(h_a, w_a, 2)
-        dists_copy = np.frombuffer(distances, dtype=np.float).reshape(h_a, w_a)
+        nnf_copy = np.array(nnf, dtype=np.int).reshape(h_a, w_a, 2)
+        dists_copy = np.array(distances, dtype=np.float).reshape(h_a, w_a)
 
         for y in range_y:
             for x in range_x:

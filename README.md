@@ -1,6 +1,6 @@
-# Deep Painterly Harmonization
+# Deep Painterly Harmonization [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Qk_HwZ833E2PmaCbJhh8W5ptyn-NHaPs)
 
-A TensorFlow implementation of "[Deep Painterly Harmonization](https://arxiv.org/abs/1804.03189)".
+A TensorFlow implementation of "[Deep Painterly Harmonization](https://arxiv.org/abs/1804.03189)". 
 
 <p align='center'>
   <img src='data/4_target.jpg' width='290'/>

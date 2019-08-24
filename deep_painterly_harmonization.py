@@ -701,7 +701,7 @@ def generate_mask(content, target):
 
 def resize_fit(img, max_size):
     """ Resizes an image if its height or width is greater than 'max_size'. """
-    height, width, _ = img.shape
+    height, width = img.shape[0], img.shape[1]
     if height > width and height > max_size:
         width = (float(max_size) / float(height)) * width
         img = cv2.resize(img, dsize=(int(width), max_size), interpolation=cv2.INTER_AREA)
